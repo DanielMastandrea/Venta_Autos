@@ -16,4 +16,3 @@ class Autos(models.Model):
     class Meta:
         verbose_name = 'Auto'
         verbose_name_plural = 'Autos'
-        

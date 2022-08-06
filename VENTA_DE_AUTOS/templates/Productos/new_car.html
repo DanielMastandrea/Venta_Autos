@@ -1,3 +1,30 @@
-<h1>Vehiculo: {{nuevo_auto.brand}} <h2>{{nuevo_auto.model}}</h2> <h2>{{nuevo_auto.year}}</h2></h1>
-<h2>Precio: {{nuevo_auto.price}}</h2>
-<h2>Stock{{nuevo_auto.stock}}</h2>
+{% extends 'base.html' %}
+
+{% block titulo %}
+Autos
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img
+                src="https://img.freepik.com/vector-premium/concepto-coche-dibujo-coche-vector-dibujado-mano-autodesign-dibujo-automovil_231873-6938.jpg?w=2000">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h1 class="card-title">Nuevo Vehiculo</h1>
+                <p class="card-text">
+                <h2>Marca: {{nuevo_auto.brand}}</h2>
+                <h2>Modelo: {{nuevo_auto.model}}</h2>
+                <h2>Año: {{nuevo_auto.year}}</h2>
+                <h2>Precio: ${{nuevo_auto.price}}</h2>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<footer><p class="card-text"><small class="text-muted">Auto agregado a la base de datos</small></p></footer>
+
+{% endblock %}

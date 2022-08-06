@@ -6,7 +6,7 @@ from Productos.models import Autos
 def create_car(request):
     autos = Autos.objects.all()
     context = {}
-    nuevo_auto = Autos.objects.create(brand = 'Chevrolet', model = "Sonic", year = 2014, price = 20000000, stock = 1)
+    nuevo_auto = Autos.objects.create(brand = 'Chevrolet', model = "Prisma", year = 2019, price = 36000000, stock = 1)
     context = {
             'nuevo_auto': nuevo_auto
         }
