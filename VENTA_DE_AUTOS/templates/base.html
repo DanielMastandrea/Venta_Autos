@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <title>Base</title>
+    <title>
+        {% block titulo %}
+            Título por defecto
+        {% endblock %}
+    </title>
 </head>
 
 <body background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);>
@@ -30,7 +34,7 @@
                 </li>
                 
             </ul>
-            <form class="form-inline my-2 my-lg-0">
+            <form class="form-inline my-2 my-lg-0" action="/Productos/search-products/" method="GET">
                 <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search"
                     name="search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
