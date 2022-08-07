@@ -2,7 +2,7 @@ from io import BufferedRandom
 from socket import fromshare
 from django import forms
 
-class Formulario_productos(forms.Form):
+class Formulario_autos(forms.Form):
     brand = forms.CharField(max_length=100)
     model = forms.CharField(max_length=100)
     year = forms.IntegerField()
