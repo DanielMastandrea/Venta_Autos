@@ -1,7 +1,6 @@
 from django.shortcuts import render,redirect
 from Productos.models import Autos
-from Productos import *
-#from  import Formulario_autos
+from Productos.forms import Formulario_autos
 
 def primer_formulario(request):
     print (request.method)
@@ -14,23 +13,19 @@ def create_car(request):
         form = Formulario_autos(request.POST)
         if form.is_valid():
             Autos.objects.create(
-                brand = form.cleaned_data['name'],
+                brand = form.cleaned_data['brand'],
                 model = form.cleaned_data['model'],
                 year = form.cleaned_data['year'],
                 price = form.cleaned_data['price'],
                 description = form.cleaned_data['description'],
                 is_active = form.cleaned_data['is_active'],
-                creation_date = form.cleaned_data['creation_date'],
                 stock = form.cleaned_data['stock']
             )
             return redirect(list_cars)
-    #autos = Autos.objects.all()
-    #context = {}
-    #nuevo_auto = Autos.objects.create(brand = 'Chevrolet', model = "Prisma", year = 2019, price = 36000000, stock = 1)
-    #context = {
-            #'nuevo_auto': nuevo_auto
-        #}
-    #return render(request, 'Productos/new_car.html', context=context)
+    elif request.method == 'GET':
+        form = Formulario_autos()
+    context = {'form':form}
+    return render(request,'Productos/new_car.html', context = context)
 
 def list_cars(request):
     autos = Autos.objects.all()
@@ -42,6 +37,6 @@ def list_cars(request):
 
 def search_products(request):
     search = request.GET['search']
-    products = Autos.objects.filter(name__icontains=search)
-    context = {'products':products}
+    autos = Autos.objects.filter(brand__icontains=search)
+    context = {'autos': autos}
     return render(request, 'Productos/search_products.html', context=context)

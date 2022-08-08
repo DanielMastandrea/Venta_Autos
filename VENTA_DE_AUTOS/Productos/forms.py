@@ -1,5 +1,4 @@
 from io import BufferedRandom
-from socket import fromshare
 from django import forms
 
 class Formulario_autos(forms.Form):
@@ -8,7 +7,6 @@ class Formulario_autos(forms.Form):
     year = forms.IntegerField()
     price = forms.FloatField()
     description = forms.CharField(max_length=200)
-    is_active = forms.BooleanField(default=True)
-    creation_date = forms.DateField(auto_now_add=True, null=True, blank=True)
+    is_active = forms.BooleanField(initial=True)
     stock = forms.IntegerField()
     
