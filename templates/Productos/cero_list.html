@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    0Km
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    {% for cero in ceros %}
+    <div class="card" style="width: 18rem;">
+        <img src="https://img.freepik.com/vector-premium/concepto-coche-dibujo-coche-vector-dibujado-mano-autodesign-dibujo-automovil_231873-6938.jpg?w=2000" class="card-img-top">
+        <div class="card-body">
+            <h3 class="card-title">{{cero.brand}}</h3>
+            <h5 class="card-text">Modelo: {{cero.model}}</h5>
+            <p class="card-text">Precio: {{cero.price}}</p>
+            <p class="card-text">Stock: {{cero.stock}}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}

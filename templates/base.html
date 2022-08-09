@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>
+        {% block titulo %}
+            Título por defecto
+        {% endblock %}
+    </title>
+</head>
+
+<body background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="https://www.creativefabrica.com/wp-content/uploads/2020/09/02/Auto-car-logo-design-Graphics-5237528-1.jpg" width="80px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/Historia.html">Historia</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Productos/list-cars/">Usados</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Productos/list-ceros/">0 Km</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Productos/list-motos/">Motos</a>
+                </li>
+                
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="/Productos/search-products/" method="GET">
+                <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search"
+                    name="search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+        </div>
+    </nav>
+
+
+    {% block contenido_que_cambia %}
+    Bloque por defecto
+    {% endblock %}
+
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(88, 135, 173, 0.2);">
+        <p><h4>Mastandrea - Galvan Beninati</h4></p>      
+        <p>© 2022 Copyright</p>    
+        </div>
+        <!-- Copyright -->
+    </footer>
+</body>
+
+</html>
