@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Autos
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    {% for auto in autos %}
+    <div class="card" style="width: 18rem;">
+        <img src="https://img.freepik.com/vector-premium/concepto-coche-dibujo-coche-vector-dibujado-mano-autodesign-dibujo-automovil_231873-6938.jpg?w=2000" class="card-img-top">
+        <div class="card-body">
+            <h3 class="card-title">{{auto.brand}}</h3>
+            <h5 class="card-text">Modelo: {{auto.model}}</h5>
+            <p class="card-text">Precio: {{auto.price}}</p>
+            <p class="card-text">Stock: {{auto.stock}}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}
